@@ -1,16 +1,15 @@
-const color = require("cli-color")
-var msg = color.xterm(39).bgXterm(128);
+var msg = (require("cli-color")).xterm(39).bgXterm(128);
 
-async function main() {
+async function deploy() {
 
-  const Incrementor = await ethers.getContractFactory("Incrementor");
-  const incrementor = await Incrementor.deploy(0);
-  await incrementor.waitForDeployment();
+  const SimpleTransfers = await ethers.getContractFactory("SimpleTransfers");
+  const simpleTransfers = await SimpleTransfers.deploy({value: ethers.parseEther('0.000000000000001')});
+  await simpleTransfers.waitForDeployment();
 
-  console.log('\nIncrementor contract deployed at', msg(await incrementor.getAddress()));
+  console.log('\nSimpleTransfers contract deployed at', msg(await simpleTransfers.getAddress()),'\n');
 }
 
-main().catch((error) => {
+deploy().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });

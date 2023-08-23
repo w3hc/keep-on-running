@@ -1,19 +1,20 @@
-# Arthera Hardhat Template
+# Keep On Running
 
-## Motivation
+Load testing Arthera Devnet.
 
-Facilitate the prototyping of decentralized apps to deploy to Arthera Testnet.
+- Network details: https://docs.arthera.net/validators/devnet#network-details 
+- Song: https://open.spotify.com/track/3J9rILoQclpsyo71xhtqaE?si=db4c1853a010430a 
 
 ## Install
 
 ```
-npm i
+npm ci
 ```
 
 ## Test
 
 ```
-npx hardhat test
+npm test
 ```
 
 ## Deploy
@@ -21,36 +22,31 @@ npx hardhat test
 Create a `.env` file:
 
 ```
-cp .env.example .env
+cp .env.template .env
 ```
 
 Add your own private key in the `.env` file, then: 
 
 ```
-npx hardhat run scripts/deploy.ts --network arthera-testnet
+npx hardhat run scripts/deploy.ts --network arthera-devnet
 ```
 
-You can use the `increment.ts` script to increment the value of `x`: 
+Copy-paste your contract address in `call.ts`, then: 
 
 ```
-npx hardhat run scripts/increment.js --network arthera-testnet
+npm play
 ```
 
-## Contract verification
+Alternatively, you can use the `call.ts` script:
 
-- Go to the [Arthera Testnet explorer](https://explorer-test.arthera.net/), which is a fork of Blockscout
-- Paste you contract address
-- Click on the 'contract' tab
-- Click on the 'Verify and publish' button (top-right)
-- Fill out the form and paste your Solidity code
-- Click on 'Verify'
-
-_Note: the Incrementor contract is [already verified](https://explorer-test.arthera.net/address/0x570DB771DeA83A2f6322E775886b0196cD770D7F?tab=contract) so you shouldn't need to do that if you keep it unchanged._
+```
+npx hardhat run scripts/call.ts --network arthera-devnet
+```
 
 ## Versions
 
-- Node [v20.3.0](https://nodejs.org/uk/blog/release/v20.3.0/)
-- NPM [v9.5.0](https://github.com/npm/cli/releases/tag/v9.5.0)
+- Node [v20.5.1](https://nodejs.org/uk/blog/release/v20.5.1/)
+- NPM [v9.8.0](https://github.com/npm/cli/releases/tag/v9.8.0)
 - Hardhat [v2.17.0](https://github.com/NomicFoundation/hardhat/releases/tag/hardhat%402.17.0)
 - OpenZeppelin Contracts [v4.9.2](https://github.com/OpenZeppelin/openzeppelin-contracts/releases/tag/v4.9.2)
 
