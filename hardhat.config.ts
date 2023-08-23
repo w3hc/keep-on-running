@@ -1,7 +1,6 @@
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 import * as dotenv from "dotenv";
-import "@nomicfoundation/hardhat-verify";
 
 dotenv.config();
 
@@ -12,6 +11,7 @@ const {
   GOERLI_ETHERSCAN_API_KEY, 
 
   ARTHERA_TESTNET_PRIVATE_KEY,
+  ARTHERA_DEVNET_PRIVATE_KEY
 
 } = process.env;
 
@@ -41,13 +41,13 @@ const config: HardhatUserConfig = {
       url: 'https://rpc-test.arthera.net',
       chainId: 10243,
       accounts: ARTHERA_TESTNET_PRIVATE_KEY !== undefined ? [ARTHERA_TESTNET_PRIVATE_KEY] : []
-    }
-  }, 
-  etherscan: {
-    apiKey: {
-      goerli: GOERLI_ETHERSCAN_API_KEY || ""
     },
-  },
+    'arthera-devnet': {
+      url: 'https://rpc-dev.arthera.net',
+      chainId: 10245,
+      accounts: ARTHERA_DEVNET_PRIVATE_KEY !== undefined ? [ARTHERA_DEVNET_PRIVATE_KEY] : []
+  }
+  }, 
 };
 
 export default config;
