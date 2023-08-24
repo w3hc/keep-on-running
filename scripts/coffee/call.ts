@@ -2,13 +2,13 @@ export{}
 var msg = (require("cli-color")).xterm(39).bgXterm(128);
 const fs = require('fs');
 
-async function call() {
+async function main() {
 
   // Replace with your own contract address, txs, amount, and loops
   const coffeeAddress = "0x419e6485325eE6a0103e643b8226eB1d266C35bb"
   const amount = ethers.parseEther('1')
   const txs = 1400
-  const loops = 1
+  const loops = 42
 
   try {
     const [signer] = await ethers.getSigners()
@@ -34,7 +34,7 @@ async function call() {
   
 }
 
-call().catch((error) => {
+main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });

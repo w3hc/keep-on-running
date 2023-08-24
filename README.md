@@ -3,7 +3,6 @@
 Load testing Arthera Devnet.
 
 - Network details: https://docs.arthera.net/validators/devnet#network-details 
-- Song: https://open.spotify.com/track/3J9rILoQclpsyo71xhtqaE?si=db4c1853a010430a 
 
 ## Install
 
@@ -21,6 +20,7 @@ npm test
 
 - Juggler: simple transfers
 - Coffee: ERC-20 token
+- Factory: contract factory
 
 ## Deploy
 
@@ -46,6 +46,13 @@ Coffee (ERC-20):
 ```
 npx hardhat run scripts/juggler/deploy.ts --network arthera-devnet
 npx hardhat run scripts/juggler/call.ts --network arthera-devnet
+```
+
+Factory (contract factory): 
+
+```
+npx hardhat run scripts/factory/deploy.ts --network arthera-devnet
+npx hardhat run scripts/factory/call.ts --network arthera-devnet
 ```
 
 ## Versions
