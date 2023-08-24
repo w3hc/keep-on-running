@@ -17,6 +17,11 @@ npm ci
 npm test
 ```
 
+## Contracts
+
+- Juggler: simple transfers
+- Coffee: ERC-20 token
+
 ## Deploy
 
 Create a `.env` file:
@@ -25,22 +30,22 @@ Create a `.env` file:
 cp .env.template .env
 ```
 
-Add your own private key in the `.env` file, then: 
+And add your own private key in the `.env` file. 
+
+## Commands
+
+Juggler:
 
 ```
-npx hardhat run scripts/deploy.ts --network arthera-devnet
+npx hardhat run scripts/juggler/deploy.ts --network arthera-devnet
+npx hardhat run scripts/juggler/call.ts --network arthera-devnet
 ```
 
-Copy-paste your contract address in `call.ts`, then: 
+Coffee (ERC-20):
 
 ```
-npm play
-```
-
-Alternatively, you can use the `call.ts` script:
-
-```
-npx hardhat run scripts/call.ts --network arthera-devnet
+npx hardhat run scripts/juggler/deploy.ts --network arthera-devnet
+npx hardhat run scripts/juggler/call.ts --network arthera-devnet
 ```
 
 ## Versions

@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 
 /// @custom:security-contact julien@strat.cc
-contract SimpleTransfers {
+contract Juggler {
 
     constructor() payable {}
 
