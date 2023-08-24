@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "hardhat test",
-    "play": "npx hardhat run scripts/call.ts --network arthera-devnet"
+    "juggler": "npx hardhat run scripts/juggler/call.ts --network arthera-devnet",
+    "coffee": "npx hardhat run scripts/coffee/call.ts --network arthera-devnet"
   },
   "keywords": [],
   "author": "",
