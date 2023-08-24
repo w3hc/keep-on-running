@@ -34,10 +34,10 @@ npx hardhat run scripts/deploy.ts --network arthera-devnet
 Copy-paste your contract address in `call.ts`, then: 
 
 ```
-npm play
+npm run play
 ```
 
-Alternatively, you can use the `call.ts` script:
+Alternatively, you can:
 
 ```
 npx hardhat run scripts/call.ts --network arthera-devnet
