@@ -5,8 +5,8 @@ async function call() {
 
   // Replace with your own contract address, txs, amount, and loops
   const simpleTransfersAddress = "0xc6E7557519519b93a54e6b32b2A65B4Fc70F7419"
-  const amount = ethers.parseEther('0.000000000000001')
-  const txs = 1000
+  const amount = ethers.parseEther('0.0000000000000014')
+  const txs = 1400
   const loops = 100
 
   try {
@@ -24,7 +24,7 @@ async function call() {
     for(let i=0;i<loops;i++) {
       const play = await simpleTransfers.play(txs, {value: amount})
       // await play.wait(1)
-      // console.log('\nShot! ✅ \n\n' + "There's", Number(await simpleTransfers.getBal()), "wei left in this contract");
+      console.log('\nShot! ✅ \n\n' + "There's", Number(await simpleTransfers.getBal()), "wei left in this contract");
       console.log('\ntx hash:', msg(play.hash))
     }
   } catch(e) {
