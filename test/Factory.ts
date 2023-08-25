@@ -25,7 +25,7 @@ describe("Contracts Factory", function () {
       await factory.deployCoffee()
       expect(await factory.counter()).to.be.equal(1)
     });
-    xit("Should deploy 10 Coffee contracts // Hardhat too limited", async function () {
+    xit("Should deploy 10 Coffee contracts", async function () {
       const { factory } = await loadFixture(deployContracts);
       const amount = ethers.parseEther('1')
       const txs = 1

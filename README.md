@@ -18,9 +18,10 @@ npm test
 
 ## Contracts
 
-- Juggler: simple transfers
+- Juggler: AA simple transfers
 - Coffee: ERC-20 token
 - Factory: contract factory
+- Gov: NFT-based DAO contract
 
 ## Prepare
 
@@ -49,17 +50,17 @@ Run in parallel:
 or: 
 
 ```
-npm-run-all -p juggler coffee factory
+npm-run-all -p juggler coffee factory gov
 ```
 
-Juggler:
+Juggler (AA simple transfers):
 
 ```
 npx hardhat run scripts/juggler/deploy.ts --network arthera-devnet
 npx hardhat run scripts/juggler/call.ts --network arthera-devnet
 ```
 
-Coffee (ERC-20):
+Coffee (ERC-20 contract):
 
 ```
 npx hardhat run scripts/coffee/deploy.ts --network arthera-devnet
@@ -71,6 +72,13 @@ Factory (contract factory):
 ```
 npx hardhat run scripts/factory/deploy.ts --network arthera-devnet
 npx hardhat run scripts/factory/call.ts --network arthera-devnet
+```
+
+Gov (NFT-based DAO contract): 
+
+```
+npx hardhat run scripts/gov/deploy.ts --network arthera-devnet
+npx hardhat run scripts/gov/call.ts --network arthera-devnet
 ```
 
 ## Versions

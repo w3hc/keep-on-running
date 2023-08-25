@@ -7,7 +7,8 @@
     "test": "hardhat test",
     "juggler": "npx hardhat run scripts/juggler/call.ts --network arthera-devnet",
     "coffee": "npx hardhat run scripts/coffee/call.ts --network arthera-devnet",
-    "factory": "npx hardhat run scripts/factory/call.ts --network arthera-devnet"
+    "factory": "npx hardhat run scripts/factory/call.ts --network arthera-devnet",
+    "gov": "npx hardhat run scripts/gov/call.ts --network arthera-devnet"
   },
   "keywords": [],
   "author": "",
