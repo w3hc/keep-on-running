@@ -8,10 +8,11 @@ const {
 
   GOERLI_TESTNET_ENDPOINT_URL, 
   GOERLI_TESTNET_PRIVATE_KEY, 
-  GOERLI_ETHERSCAN_API_KEY, 
 
-  ARTHERA_TESTNET_PRIVATE_KEY,
-  ARTHERA_DEVNET_PRIVATE_KEY
+  ARTHERA_TESTNET_PRIVATE_KEY_1,
+  ARTHERA_TESTNET_PRIVATE_KEY_2,
+  ARTHERA_TESTNET_PRIVATE_KEY_3,
+  ARTHERA_TESTNET_PRIVATE_KEY_4
 
 } = process.env;
 
@@ -38,15 +39,10 @@ const config: HardhatUserConfig = {
       url: GOERLI_TESTNET_ENDPOINT_URL as string,
       accounts: GOERLI_TESTNET_PRIVATE_KEY !== undefined ? [GOERLI_TESTNET_PRIVATE_KEY] : [],
     },
-    'arthera-testnet': {
-      url: 'https://rpc-test.arthera.net',
-      chainId: 10243,
-      accounts: ARTHERA_TESTNET_PRIVATE_KEY !== undefined ? [ARTHERA_TESTNET_PRIVATE_KEY] : []
-    },
     'arthera-devnet': {
       url: 'https://rpc-dev.arthera.net',
       chainId: 10245,
-      accounts: ARTHERA_DEVNET_PRIVATE_KEY !== undefined ? [ARTHERA_DEVNET_PRIVATE_KEY] : []
+      accounts: [ARTHERA_TESTNET_PRIVATE_KEY_1 || '', ARTHERA_TESTNET_PRIVATE_KEY_2 || '', ARTHERA_TESTNET_PRIVATE_KEY_3 || '', ARTHERA_TESTNET_PRIVATE_KEY_4 || '']
   }
   }, 
 };
