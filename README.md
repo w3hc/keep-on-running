@@ -22,7 +22,7 @@ npm test
 - Coffee: ERC-20 token
 - Factory: contract factory
 
-## Deploy
+## Prepare
 
 Create a `.env` file:
 
@@ -30,9 +30,27 @@ Create a `.env` file:
 cp .env.template .env
 ```
 
-And add your own private key in the `.env` file. 
+In the `.env` file, add 4 private keys of funded accounts.
 
-## Commands
+If needed, install `npm-run-all`: 
+
+```
+npm i npm-run-all -g
+```
+
+## Run
+
+Run in parallel: 
+
+```
+./run.sh
+```
+
+or: 
+
+```
+npm-run-all -p juggler coffee factory
+```
 
 Juggler:
 
@@ -44,8 +62,8 @@ npx hardhat run scripts/juggler/call.ts --network arthera-devnet
 Coffee (ERC-20):
 
 ```
-npx hardhat run scripts/juggler/deploy.ts --network arthera-devnet
-npx hardhat run scripts/juggler/call.ts --network arthera-devnet
+npx hardhat run scripts/coffee/deploy.ts --network arthera-devnet
+npx hardhat run scripts/coffee/call.ts --network arthera-devnet
 ```
 
 Factory (contract factory): 
