@@ -8,7 +8,7 @@ async function main() {
   
   const amount = ethers.parseEther('0.0000000000000014')
   const txs = 1400
-  const loops = 5
+  const loops = 10
 
   try {
     const [bruce, vip1, vip2, vip3] = await ethers.getSigners()
@@ -26,7 +26,7 @@ async function main() {
       const play = await juggler.play(txs, {value: amount})
       // await play.wait(1)
       // console.log('\nShot! ✅ \n\n' + "There's", Number(await juggler.getBal()), "wei left in this contract");
-      console.log('\ntx hash:', msg(play.hash))
+      console.log('\nplay:', msg(play.hash))
     }
   } catch(e) {
     console.log('woops:', e)

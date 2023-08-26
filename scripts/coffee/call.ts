@@ -7,7 +7,7 @@ async function main() {
   const coffeeAddress = "0x419e6485325eE6a0103e643b8226eB1d266C35bb" // Replace contract address here if needed
   const amount = ethers.parseEther('1')
   const txs = 1400
-  const loops = 5
+  const loops = 10
 
   try {
     const [bruce, vip1, vip2, vip3] = await ethers.getSigners()
@@ -25,7 +25,7 @@ async function main() {
       const play = await coffee.mint(amount)
       // await play.wait(1)
       // console.log('\nShot! ✅ \n\n' + "There's", Number(await juggler.getBal()), "wei left in this contract");
-      console.log('\ntx hash:', msg(play.hash))
+      console.log('\nmint:', msg(play.hash))
     }
   } catch(e) {
     console.log('woops:', e)
