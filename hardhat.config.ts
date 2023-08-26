@@ -6,9 +6,6 @@ dotenv.config();
 
 const { 
 
-  GOERLI_TESTNET_ENDPOINT_URL, 
-  GOERLI_TESTNET_PRIVATE_KEY, 
-
   ARTHERA_TESTNET_PRIVATE_KEY_1,
   ARTHERA_TESTNET_PRIVATE_KEY_2,
   ARTHERA_TESTNET_PRIVATE_KEY_3,
@@ -35,10 +32,10 @@ const config: HardhatUserConfig = {
       chainId: 1337,
       allowUnlimitedContractSize: true
     },
-    'goerli': {
-      url: GOERLI_TESTNET_ENDPOINT_URL as string,
-      accounts: GOERLI_TESTNET_PRIVATE_KEY !== undefined ? [GOERLI_TESTNET_PRIVATE_KEY] : [],
-    },
+    // 'goerli': {
+    //   url: GOERLI_TESTNET_ENDPOINT_URL as string,
+    //   accounts: GOERLI_TESTNET_PRIVATE_KEY !== undefined ? [GOERLI_TESTNET_PRIVATE_KEY] : [],
+    // },
     'arthera-devnet': {
       url: 'https://rpc-dev.arthera.net',
       chainId: 10245,

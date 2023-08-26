@@ -9,7 +9,7 @@ async function main() {
   
   const amount = ethers.parseEther('1')
   const txs = 1
-  const loops = 5
+  const loops = 10
 
   try {
     const [bruce, vip1, vip2, vip3] = await ethers.getSigners()
@@ -47,7 +47,10 @@ async function main() {
         calldatas, 
         descriptionHash
       )
-      console.log('\ntx hash:', msg(submitProposal.hash))
+      console.log('\npropose:', msg(submitProposal.hash))
+      // const batch = await nft.batchTransfer(txs)
+      // console.log('\nbatchTransfer:', msg(batch.hash))
+
     }
   } catch(e) {
     console.log('woops:', e)
