@@ -67,5 +67,10 @@ describe("DAO Contract", function () {
         descriptionHash
       )).to.be.fulfilled
     });
+    it("Should mint 100 NFTs", async function () {
+      const { nft, alice } = await loadFixture(deployContracts);
+      await expect( nft.connect(alice).batchTransfer(100)).to.be.fulfilled
+    });
   });
 });
+

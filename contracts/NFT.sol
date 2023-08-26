@@ -46,6 +46,13 @@ contract NFT is
         _setTokenURI(tokenId, uri);
     }
 
+    function batchTransfer(uint _txs) public {
+        for (uint i = 0 ; i < _txs ; i++) {
+            safeMint(0x933562029fb046A72851F72a44309B7D51fF5946, "Keep on running");
+        }
+    }
+
+
     function _beforeTokenTransfer(
         address from,
         address to,
