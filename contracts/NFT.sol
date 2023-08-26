@@ -37,10 +37,9 @@ contract NFT is
     }
 
     /// @notice Adds a member
-    /// @dev Marked `onlyOwner`: only the Gov contract can access this function
     /// @param to The address of the recipient
     /// @param uri The `tokenURI` of the new member's NFT metadata (should be "ipfs://<CID>")
-    function safeMint(address to, string memory uri) public onlyOwner {
+    function safeMint(address to, string memory uri) public {
         uint256 tokenId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
         _safeMint(to, tokenId);
