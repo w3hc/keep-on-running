@@ -17,10 +17,6 @@ contract Coffee is ERC20 {
         ERC20(_erc20).transferFrom(address(this), msg.sender, ERC20(_erc20).balanceOf(address(this)));
     }
 
-    function getInfo() public pure returns (string memory uri) {
-        return "https://open.spotify.com/track/3qgx26V2POGIsGAFLyWJsx?si=80cbaabfb4d64015";
-    }
-
     receive() external payable {
         payable(msg.sender).transfer(msg.value);
     }
