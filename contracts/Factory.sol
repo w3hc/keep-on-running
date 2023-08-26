@@ -3,7 +3,6 @@ pragma solidity ^0.8.0;
 
 import "./Coffee.sol";
 
-/// @custom:security-contact julien@strat.cc
 contract Factory {
 
     Coffee[] public coffeeArray;
