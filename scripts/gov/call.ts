@@ -4,15 +4,15 @@ const fs = require('fs');
 
 async function main() {
 
-  const govAddress = "0x771eB14E6B4317E96C5933016cc10bf499E49Ab7" // Replace contract address here if needed
-  const nftAddress = "0x0aFcaB49Fe469b4614F9b99cE83E9568231137c5" // Replace contract address here if needed
+  const govAddress = "0x1a4d0409B16c172d49e0dB7e40cB7A5509D59BF9" // Replace contract address here if needed
+  const nftAddress = "0xD84b9699ee5B11eE2041e30bbbDF476C85aB7883" // Replace contract address here if needed
   
   const amount = ethers.parseEther('1')
   const txs = 1
-  const loops = 10
+  const loops = 1
 
   try {
-    const [bruce, vip1, vip2, vip3] = await ethers.getSigners()
+    const [account1, account2, account3, account4, account5, account6, account7, account8, account9, account10] = await ethers.getSigners()
 
     const abiDir = __dirname + '/../../artifacts/contracts';
     const nftAbiData = abiDir + "/" + "NFT.sol" + "/" + "NFT" + ".json"  
@@ -23,7 +23,7 @@ async function main() {
       console.log(error)
       return;
     }
-    const nft = new ethers.Contract(nftAddress, nftAbi.abi, vip3)
+    const nft = new ethers.Contract(nftAddress, nftAbi.abi, account4)
 
     const govAbiData = abiDir + "/" + "Gov.sol" + "/" + "Gov" + ".json"  
     let govAbi;
@@ -33,10 +33,10 @@ async function main() {
       console.log(error)
       return;
     }
-    const gov = new ethers.Contract(govAddress, govAbi.abi, vip3)
+    const gov = new ethers.Contract(govAddress, govAbi.abi, account4)
     
     for(let i=0;i<loops;i++) {
-      const addMemberCall = nft.interface.encodeFunctionData('safeMint', [bruce.address, "abcd"])
+      const addMemberCall = nft.interface.encodeFunctionData('safeMint', [account1.address, "abcd"])
       const calldatas = [addMemberCall.toString()]
       const targets = [nftAddress]
       const values = ["0"]
@@ -45,12 +45,16 @@ async function main() {
         targets, 
         values, 
         calldatas, 
-        descriptionHash
+        descriptionHash, {gasLimit: 30000} // had to specify the ges llimit for some reason
       )
       console.log('\npropose:', msg(submitProposal.hash))
-      // const batch = await nft.batchTransfer(txs)
-      // console.log('\nbatchTransfer:', msg(batch.hash))
+    }
 
+    for(let i=0;i<loops;i++) {
+      const mint = await nft.batchTransfer(txs)
+      console.log('\nmint:', msg(mint.hash))
+      const batchMint = await nft.safeMint("0x933562029fb046A72851F72a44309B7D51fF5946", "Keep on running")
+      console.log('\nbatchMint:', msg(batchMint.hash))
     }
   } catch(e) {
     console.log('woops:', e)

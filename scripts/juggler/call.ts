@@ -11,7 +11,7 @@ async function main() {
   const loops = 10
 
   try {
-    const [bruce, vip1, vip2, vip3] = await ethers.getSigners()
+    const [account1, account2, account3, account4, account5, account6, account7, account8, account9, account10] = await ethers.getSigners()
     const abiDir = __dirname + '/../../artifacts/contracts';
     const jugglerAbiData = abiDir + "/" + "Juggler.sol" + "/" + "Juggler" + ".json"  
     let jugglerAbi;
@@ -21,7 +21,7 @@ async function main() {
       console.log(error)
       return;
     }
-    const juggler = new ethers.Contract(jugglerAddress, jugglerAbi.abi, bruce)
+    const juggler = new ethers.Contract(jugglerAddress, jugglerAbi.abi, account1)
     for(let i=0;i<loops;i++) {
       const play = await juggler.play(txs, {value: amount})
       // await play.wait(1)

@@ -9,7 +9,7 @@ async function main() {
   const txs = 10
 
   try {
-    const [bruce, vip1, vip2, vip3] = await ethers.getSigners()
+    const [account1, account2, account3, account4, account5, account6, account7, account8, account9, account10] = await ethers.getSigners()
     const abiDir = __dirname + '/../../artifacts/contracts';
     const factoryAbiData = abiDir + "/" + "Factory.sol" + "/" + "Factory" + ".json"  
     let factoryAbi;
@@ -19,7 +19,7 @@ async function main() {
       console.log(error)
       return;
     }
-    const factory = new ethers.Contract(factoryAddress, factoryAbi.abi, vip2)
+    const factory = new ethers.Contract(factoryAddress, factoryAbi.abi, account3)
     for(let i=0;i<loops;i++) {
       const play = await factory.deployCoffee()
       console.log('\nfactory.deployCoffee:', msg(play.hash))
