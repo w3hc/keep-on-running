@@ -1,15 +1,15 @@
 export{}
 var msg = (require("cli-color")).xterm(39).bgXterm(128);
 const fs = require('fs');
+import { loops } from '../loops'
 
 async function main() {
 
-  const govAddress = "0x263dC054BAF913CF6929740ec9415CE4D89BF90e" // Replace contract address here if needed
-  const nftAddress = "0x71A16bDbF98f0B3ae789237989708810332568DC" // Replace contract address here if needed
+  const govAddress = "0xffe6A68Afb5B84C53d50E3ABdC9e5A50f53C202d" // Replace contract address here if needed
+  const nftAddress = "0x8810C6B3b894B58c8D5Cecd42A1bAff65019e7ec" // Replace contract address here if needed
   
   const amount = ethers.parseEther('1')
   const txs = 1
-  const loops = 1
 
   try {
     const [account1, account2, account3, account4, account5, account6, account7, account8, account9, account10] = await ethers.getSigners()
