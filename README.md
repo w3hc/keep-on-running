@@ -41,7 +41,7 @@ npm i npm-run-all -g
 
 ## Run
 
-Run in parallel: 
+Set the number of loops in the `loops.ts` file, then run: 
 
 ```
 ./run.sh
@@ -50,7 +50,7 @@ Run in parallel:
 or: 
 
 ```
-npm-run-all -p juggler coffee factory gov
+npm-run-all -p juggler coffee factory gov gov2
 ```
 
 Juggler (AA simple transfers):
