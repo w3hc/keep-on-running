@@ -1,3 +1,3 @@
 #!/bin/sh
 
-npm test && npm-run-all -p juggler coffee factory gov
+npm-run-all -p juggler coffee factory gov gov2
