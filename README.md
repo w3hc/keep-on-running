@@ -81,6 +81,10 @@ npx hardhat run scripts/gov/deploy.ts --network arthera-devnet
 npx hardhat run scripts/gov/call.ts --network arthera-devnet
 ```
 
+## Potential errors
+
+If you get an `UNSUPPORTED_OPERATION` error, it means one of the accounts has run out of funds. 
+
 ## Versions
 
 - Node [v20.5.1](https://nodejs.org/uk/blog/release/v20.5.1/)

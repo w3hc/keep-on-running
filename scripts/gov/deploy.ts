@@ -3,12 +3,12 @@ var msg = (require("cli-color")).xterm(39).bgXterm(128);
 
 async function main() {
 
-  const [bruce, vip1, vip2, vip3] = await ethers.getSigners()
+  const [account1, account2, account3, account4, account5, account6, account7, account8, account9, account10] = await ethers.getSigners()
 
   const uri = "ipfs://bafkreih2ac5yabo2daerkw5w5wcwdc7rveqejf4l645hx2px26r5fxfnpe"
-  const firstMembers = [bruce, vip1, vip2, vip3]
-  const nftName = "Membership NFT"
-  const symbol = "MEMBER"
+  const firstMembers = [account1, account2]
+  const nftName = "Special NFT"
+  const symbol = "SPECIAL"
   const NFT = await ethers.getContractFactory("NFT")
   const nft = await NFT.deploy(firstMembers, uri, nftName, symbol)
   const nftAddress = await nft.getAddress()
@@ -31,6 +31,7 @@ async function main() {
     votingPeriod, 
     votingThreshold, 
     quorum, {gasLimit: 420000} // for some reason I had to specify the gas limit here
+    // quorum
   );
   await nft.transferOwnership(await gov.getAddress())
   console.log('\nGov contract deployed at', msg(await gov.getAddress()),'\n');

@@ -6,10 +6,18 @@ dotenv.config();
 
 const { 
 
+  ARTHERA_DEVNET_RPC_ENDPOINT,
+
   ARTHERA_TESTNET_PRIVATE_KEY_1,
   ARTHERA_TESTNET_PRIVATE_KEY_2,
   ARTHERA_TESTNET_PRIVATE_KEY_3,
-  ARTHERA_TESTNET_PRIVATE_KEY_4
+  ARTHERA_TESTNET_PRIVATE_KEY_4,
+  ARTHERA_TESTNET_PRIVATE_KEY_5,
+  ARTHERA_TESTNET_PRIVATE_KEY_6,
+  ARTHERA_TESTNET_PRIVATE_KEY_7,
+  ARTHERA_TESTNET_PRIVATE_KEY_8,
+  ARTHERA_TESTNET_PRIVATE_KEY_9,
+  ARTHERA_TESTNET_PRIVATE_KEY_10
 
 } = process.env;
 
@@ -32,14 +40,21 @@ const config: HardhatUserConfig = {
       chainId: 1337,
       allowUnlimitedContractSize: true
     },
-    // 'goerli': {
-    //   url: GOERLI_TESTNET_ENDPOINT_URL as string,
-    //   accounts: GOERLI_TESTNET_PRIVATE_KEY !== undefined ? [GOERLI_TESTNET_PRIVATE_KEY] : [],
-    // },
     'arthera-devnet': {
-      url: 'https://rpc-dev.arthera.net',
+      url: ARTHERA_DEVNET_RPC_ENDPOINT,
       chainId: 10245,
-      accounts: [ARTHERA_TESTNET_PRIVATE_KEY_1 || '', ARTHERA_TESTNET_PRIVATE_KEY_2 || '', ARTHERA_TESTNET_PRIVATE_KEY_3 || '', ARTHERA_TESTNET_PRIVATE_KEY_4 || '']
+      accounts: [
+        ARTHERA_TESTNET_PRIVATE_KEY_1 || '', 
+        ARTHERA_TESTNET_PRIVATE_KEY_2 || '', 
+        ARTHERA_TESTNET_PRIVATE_KEY_3 || '', 
+        ARTHERA_TESTNET_PRIVATE_KEY_4 || '',
+        ARTHERA_TESTNET_PRIVATE_KEY_5 || '',
+        ARTHERA_TESTNET_PRIVATE_KEY_6 || '',
+        ARTHERA_TESTNET_PRIVATE_KEY_7 || '',
+        ARTHERA_TESTNET_PRIVATE_KEY_8 || '',
+        ARTHERA_TESTNET_PRIVATE_KEY_9 || '',
+        ARTHERA_TESTNET_PRIVATE_KEY_10 || ''
+    ]
   }
   }, 
 };
