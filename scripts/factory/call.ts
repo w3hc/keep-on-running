@@ -1,11 +1,11 @@
 export{}
 var msg = (require("cli-color")).xterm(39).bgXterm(128);
 const fs = require('fs');
+import { loops } from '../loops'
 
 async function main() {
 
   const factoryAddress = "0xBbEc7b30593579684771dFe43667efa0a1Cc8Da9" // Replace contract address here if needed
-  const loops = 5
   const txs = 10
 
   try {

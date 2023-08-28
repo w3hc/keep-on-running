@@ -1,13 +1,13 @@
 export{}
 var msg = (require("cli-color")).xterm(39).bgXterm(128);
 const fs = require('fs');
+import { loops } from '../loops'
 
 async function main() {
 
   const coffeeAddress = "0x419e6485325eE6a0103e643b8226eB1d266C35bb" // Replace contract address here if needed
   const amount = ethers.parseEther('1')
   const txs = 1400
-  const loops = 10
 
   try {
     const [account1, account2, account3, account4, account5, account6, account7, account8, account9, account10] = await ethers.getSigners()
