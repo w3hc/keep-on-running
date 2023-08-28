@@ -36,7 +36,23 @@ In the `.env` file, add 4 private keys of funded accounts.
 If needed, install `npm-run-all`: 
 
 ```
+npx hardhat run scripts/juggler/deploy.ts --network arthera-devnet
+```
+
+```
 npm i npm-run-all -g
+```
+
+If you need additional wallet accounts, you can use the `wallets.ts` scripts which creates and funds any newly created accounts from account #1. You can edit the `numberOfAccounts` variable, then run: 
+
+```
+npx hardhat run scripts/wallets.ts --network arthera-devnet
+```
+
+To check the balances of all the accounts: 
+
+```
+npx hardhat run scripts/balances.ts --network arthera-devnet
 ```
 
 ## Run
