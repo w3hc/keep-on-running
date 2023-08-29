@@ -31,23 +31,23 @@ Create a `.env` file:
 cp .env.template .env
 ```
 
-In the `.env` file, add 4 private keys of funded accounts.
+In the `.env` file, add 10 private keys of funded accounts.
 
 If needed, install `npm-run-all`: 
 
 ```
-npx hardhat run scripts/juggler/deploy.ts --network arthera-devnet
-```
-
-```
 npm i npm-run-all -g
 ```
+
+#### Create and fund wallets
 
 If you need additional wallet accounts, you can use the `wallets.ts` scripts which creates and funds any newly created accounts from account #1. You can edit the `numberOfAccounts` variable, then run: 
 
 ```
 npx hardhat run scripts/wallets.ts --network arthera-devnet
 ```
+
+#### Check all balances
 
 To check the balances of all the accounts: 
 
@@ -68,6 +68,8 @@ or:
 ```
 npm-run-all -p juggler coffee factory gov gov2
 ```
+
+#### Other commands
 
 Juggler (AA simple transfers):
 
@@ -95,6 +97,13 @@ Gov (NFT-based DAO contract):
 ```
 npx hardhat run scripts/gov/deploy.ts --network arthera-devnet
 npx hardhat run scripts/gov/call.ts --network arthera-devnet
+```
+
+Gov2 (NFT-based DAO contract): 
+
+```
+npx hardhat run scripts/gov2/deploy.ts --network arthera-devnet
+npx hardhat run scripts/gov2/call.ts --network arthera-devnet
 ```
 
 ## Potential errors
