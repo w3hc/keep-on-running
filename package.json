@@ -9,7 +9,8 @@
     "coffee": "npx hardhat run scripts/coffee/call.ts --network arthera-devnet",
     "factory": "npx hardhat run scripts/factory/call.ts --network arthera-devnet",
     "gov": "npx hardhat run scripts/gov/call.ts --network arthera-devnet",
-    "gov2": "npx hardhat run scripts/gov2/call.ts --network arthera-devnet"
+    "gov2": "npx hardhat run scripts/gov2/call.ts --network arthera-devnet",
+    "basic": "hardhat run scripts/simpleTransfer.ts --network arthera-devnet"
   },
   "keywords": [],
   "author": "",
